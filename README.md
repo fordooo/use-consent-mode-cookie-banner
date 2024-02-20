@@ -1,4 +1,4 @@
-# Consent Mode Setup
+# Consent Mode Cookie Banner
 
 Steps to setup Google Consent Mode in a React.js project and Google Tag Manager
 
