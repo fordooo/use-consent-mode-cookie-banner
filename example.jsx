@@ -1,4 +1,5 @@
 import React from "react";
+import * as CookieConsent from "vanilla-cookieconsent";
 import { useCookieBanner } from "./use-cookie-banner";
 
 const Example = () => {
@@ -8,6 +9,9 @@ const Example = () => {
   return (
     <div>
       <h1>Hello World</h1>
+      <button onClick={CookieConsent.showPreferences}>
+        Cookie Preferences
+      </button>
     </div>
   );
 };
