@@ -2,11 +2,11 @@
 
 Steps to setup Google Consent Mode in a React.js project and Google Tag Manager
 
-![cookie banner](./cookie-banner.png)
+![cookie banner](./images/cookie-banner.png)
 
 ## Install and Setup Cookie Consent Banner
 
-- `yarn add vanilla-cookieconsent`
+- Install the [cookieconsent](https://github.com/osano/cookieconsent) library `yarn add vanilla-cookieconsent`
 - Add `useCookieBanner` hook and customize text/options (reference [docs](https://cookieconsent.orestbida.com/reference/api-reference.html) for available options)
 - Add to any pages needing the banner: eg `useCookieBanner({ lang: 'en', privacyPolicyUrl: '/privacy-policy' })`
 - Preferences modal can be reopened by calling `CookieConsent.showPreferences()`, eg from a "Cookie Preferences" button in the footer
@@ -17,9 +17,10 @@ Steps to setup Google Consent Mode in a React.js project and Google Tag Manager
 ## Setup Google Tag Manager to Handle Consent Selection
 
 - Enable consent mode in GTM container: Admin -> Container Settings -> Enable consent overview
-- After setting up the Variables, Tags, and Triggers below, go into Tags -> Consent Overview (shield icon) and setup any additional consent needed for tags. Eg add Additional Consent: `ad_storage` to any Facebook Pixel tags.
 
-![gtm changes](./gtm-changes.png)
+- Add all of the Variables, Tags, and Triggers below, then go to Tags -> Consent Overview (shield icon) and setup any additional consent checks needed for tags. Eg add `Additional Consent: ad_storage` to any Facebook Pixel tags.
+
+![gtm changes](./images/gtm-changes.png)
 
 ### Variables
 
@@ -118,6 +119,7 @@ We need to setup two instances of this tag:
 
 ### CookieConsent package
 
+- CookieConsent Github https://github.com/osano/cookieconsent
 - CookieConsent Docs https://cookieconsent.orestbida.com/essential/getting-started.html
 - CookieConsent v3 Playground https://playground.cookieconsent.orestbida.com/
 - CookieConsent Next.js 13 example: https://stackblitz.com/edit/stackblitz-starters-gobdmp
