@@ -1,6 +1,6 @@
 # Consent Mode Cookie Banner
 
-Steps to setup Google Consent Mode in a React.js project and Google Tag Manager
+Steps to setup Google Consent Mode in a React.js project and Google Tag Manager.
 
 ![cookie banner](./images/cookie-banner.png)
 
@@ -114,6 +114,14 @@ We need to setup two instances of this tag:
 
 - Event name: `consent_update`
 - Should trigger `Consent Mode - Update Settings` tag
+
+## Testing
+
+In Google Tag Manager, preview your workspace changes and you should see variable and cookie changes before/after giving consent via the new cookie banner.
+
+Example of GTM variables before and after clicking "Accept All" on the banner:
+
+![gtm variables](./images/before-after.png)
 
 ## Useful Links
 
