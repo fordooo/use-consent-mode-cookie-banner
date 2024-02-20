@@ -19,6 +19,8 @@ Steps to setup Google Consent Mode in a React.js project and Google Tag Manager
 - Enable consent mode in GTM container: Admin -> Container Settings -> Enable consent overview
 - After setting up the Variables, Tags, and Triggers below, go into Tags -> Consent Overview (shield icon) and setup any additional consent needed for tags. Eg add Additional Consent: `ad_storage` to any Facebook Pixel tags.
 
+![gtm changes](./gtm-changes.png)
+
 ### Variables
 
 1. 1st Party Cookie: `cookie - cookieconsent`
@@ -26,7 +28,11 @@ Steps to setup Google Consent Mode in a React.js project and Google Tag Manager
 - Cookie Name: `cc_cookie`
 - URI-decode cookie: enabled
 
-2. Custom JavaScript Variable: `cjs - consent - analytics`
+2. GTM Consent State variable template: `Consent State`
+
+- Variables -> User-Defined Variables -> New -> Community Template Gallery -> GTM Consent State by Ayudante
+
+3. Custom JavaScript Variable: `cjs - consent - analytics`
 
 ```
 function() {
@@ -43,7 +49,7 @@ function() {
 }
 ```
 
-3. Custom JavaScript Variable: `cjs - consent - functionality`
+4. Custom JavaScript Variable: `cjs - consent - functionality`
 
 ```
 function() {
@@ -60,7 +66,7 @@ function() {
 }
 ```
 
-4. Custom JavaScript Variable: `cjs - consent - marketing`
+5. Custom JavaScript Variable: `cjs - consent - marketing`
 
 ```
 function() {
@@ -76,10 +82,6 @@ function() {
   }
 }
 ```
-
-5. GTM Consent State variable template: `Consent State`
-
-- Variables -> User-Defined Variables -> New -> Community Template Gallery -> GTM Consent State by Ayudante
 
 ### Tags
 
@@ -102,12 +104,12 @@ We need to setup two instances of this tag:
 
 ### Triggers
 
-1. Custom Event: custom event - consent initial selection
+1. Custom Event: `custom event - consent initial selection`
 
 - Event name: `consent_initial_selection`
 - Should trigger all Google/FB/Linkedin/etc tags that usually trigger on All Page View trigger
 
-2. Custom Event: custom event - consent updated
+2. Custom Event: `custom event - consent updated`
 
 - Event name: `consent_update`
 - Should trigger `Consent Mode - Update Settings` tag
