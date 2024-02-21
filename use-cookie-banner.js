@@ -3,33 +3,26 @@ import { useEffect } from "react";
 import "vanilla-cookieconsent/dist/cookieconsent.css";
 import * as CookieConsent from "vanilla-cookieconsent";
 
-const initializeConsent = () => {
+const pushToDataLayer = (event) => {
   const dataLayer = window.dataLayer || [];
-  dataLayer.push({
-    event: "consent_update",
-  });
-  setTimeout(() => {
-    dataLayer.push({
-      event: "consent_initial_selection",
-    });
-  }, 500);
+  dataLayer.push({ event });
 };
 
 const updateConsent = () => {
-  const dataLayer = window.dataLayer || [];
-  dataLayer.push({
-    event: "consent_update",
-  });
+  pushToDataLayer("consent_update");
+};
+
+const initializeConsent = () => {
+  updateConsent();
+  setTimeout(() => {
+    pushToDataLayer("consent_initial_selection");
+  }, 500);
 };
 
 const getConfig = ({ lang, privacyPolicyUrl }) => {
   const config = {
-    onFirstConsent: () => {
-      initializeConsent();
-    },
-    onChange: () => {
-      updateConsent();
-    },
+    onFirstConsent: initializeConsent,
+    onChange: updateConsent,
     guiOptions: {
       consentModal: {
         layout: "bar inline",
@@ -166,13 +159,10 @@ export const useCookieBanner = ({
   privacyPolicyUrl = "/privacy-policy",
 }) => {
   useEffect(() => {
-    CookieConsent.setLanguage(lang);
-  }, [lang]);
-
-  useEffect(() => {
     // Uncomment the following line to reset the consent cookie:
     // CookieConsent.reset(true)
 
+    CookieConsent.setLanguage(lang);
     CookieConsent.run(getConfig({ lang, privacyPolicyUrl }));
   }, [lang, privacyPolicyUrl]);
 
