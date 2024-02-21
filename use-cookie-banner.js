@@ -52,7 +52,7 @@ const getConfig = ({ lang, privacyPolicyUrl }) => {
         en: {
           consentModal: {
             title: "We Value Your Privacy",
-            description: `We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic to improve user experience on our website. By clicking "Accept All", you consent to our use of cookies. For more info, see our <a href="${privacyPolicyUrl}">Privacy Policy</a>.`,
+            description: `We use cookies to enhance your browsing experience, personalize ads or content, and analyze our traffic to improve user experience on our website. By clicking "Accept All", you consent to our use of cookies. For more info, see our <a href="${privacyPolicyUrl}">Privacy Policy</a>.`,
             acceptAllBtn: "Accept All",
             acceptNecessaryBtn: "Reject All",
             showPreferencesBtn: "Customize Settings",
@@ -98,7 +98,7 @@ const getConfig = ({ lang, privacyPolicyUrl }) => {
             ],
           },
         },
-        zh: {
+        cn: {
           consentModal: {
             title: "我们重视您的隐私",
             description: `我们使用 cookie 来增强您的浏览体验，提供个性化广告或内容，并分析我们的流量以改善网站用户体验。点击“接受所有”即表示您同意我们使用 cookie。有关更多信息，请参阅我们的<a href="${privacyPolicyUrl}">隐私政策</a>。`,

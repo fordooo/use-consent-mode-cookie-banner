@@ -6,7 +6,7 @@ Steps to setup Google Consent Mode in a React.js project and Google Tag Manager.
 
 ## Install and Setup Cookie Consent Banner
 
-- Install the [cookieconsent](https://github.com/osano/cookieconsent) library `yarn add vanilla-cookieconsent`
+- Install the [cookieconsent](https://github.com/osano/cookieconsent) library: `yarn add vanilla-cookieconsent`
 - Add `useCookieBanner` hook and customize text/options (reference [docs](https://cookieconsent.orestbida.com/reference/api-reference.html) for available options)
 - Add to any pages needing the banner: eg `useCookieBanner({ lang: 'en', privacyPolicyUrl: '/privacy-policy' })`
 - Preferences modal can be reopened by calling `CookieConsent.showPreferences()`, eg from a "Cookie Preferences" button in the footer
@@ -27,7 +27,7 @@ Steps to setup Google Consent Mode in a React.js project and Google Tag Manager.
 1. 1st Party Cookie: `cookie - cookieconsent`
 
 - Cookie Name: `cc_cookie`
-- URI-decode cookie: enabled
+- URI-decode cookie: `enabled`
 
 2. GTM Consent State variable template: `Consent State`
 
@@ -86,18 +86,18 @@ function() {
 
 ### Tags
 
+We need to setup two instances of this tag from the community template gallery:
+
 Tags -> Community Template Gallery -> Consent Mode (Google tags) by gtm-templates-simo-ahava
 
-We need to setup two instances of this tag:
-
-1. `Consent Mode - Default Settings`
+1. `Consent Mode - Default Settings` - This sets the default consent settings on consent initialization
 
 - Consent Command: `Default`
 - Wait for Undate: `2000`
 - Required for Google services / Other signals: update to use variables `{{cjs - consent - marketing|analytics|functionality}}`
 - Firing Triggers: `Consent Initialization: All Pages`
 
-2. `Consent Mode - Update Settings`
+2. `Consent Mode - Update Settings` - This updates the consent settings when a user submits their preferences
 
 - Consent Command: `Update`
 - Required for Google services / Other signals: update to use variables `{{cjs - consent - marketing|analytics|functionality}}`
@@ -134,8 +134,8 @@ Example of GTM variables before and after clicking "Accept All" on the banner:
 
 ### GTM consent mode installation
 
-- How to install a Consent Mode Cookie Banner with GTM (Part 1) https://www.youtube.com/watch?v=In4TNHLTz_Y
-- How to Install Consent Mode V2 (with GTM and Cookiebot) https://www.youtube.com/watch?v=KVXnCdImOSk
+- How to install a Consent Mode Cookie Banner with GTM (Part 1) https://youtu.be/In4TNHLTz_Y
+- How to Install Consent Mode V2 (with GTM and Cookiebot) https://youtu.be/KVXnCdImOSk
 
 ### GDRP compliance info
 
