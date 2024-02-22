@@ -136,6 +136,7 @@ Example of GTM variables before and after clicking "Accept All" on the banner:
 
 - How to install a Consent Mode Cookie Banner with GTM (Part 1) https://youtu.be/In4TNHLTz_Y
 - How to Install Consent Mode V2 (with GTM and Cookiebot) https://youtu.be/KVXnCdImOSk
+- Basic vs Advanced Consent Mode https://support.google.com/google-ads/answer/10000067
 
 ### GDRP compliance info
 
