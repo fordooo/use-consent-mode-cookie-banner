@@ -20,7 +20,7 @@ Steps to setup Google Consent Mode in a React.js project and Google Tag Manager.
 
 - Add all of the Variables, Tags, and Triggers below, then go to Tags -> Consent Overview (shield icon) and setup any additional consent checks needed for tags. Eg add `Additional Consent: ad_storage` to any Facebook Pixel tags.
 
-- If using the Google Ads Conversion Linker tag, you may need to enable the "Enable linking on all page URLs" option. More info in [this article](https://www.analyticsmania.com/post/conversion-linker-google-tag-manager/).
+- If using the Google Ads Conversion Linker tag, you may need to enable the "Enable linking on all page URLs" option. More info in [this article](https://www.analyticsmania.com/post/conversion-linker-google-tag-manager/#optional).
 
 ![gtm changes](./images/gtm-changes.png)
 
