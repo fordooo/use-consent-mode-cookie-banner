@@ -33,7 +33,8 @@ Steps to setup Google Consent Mode in a React.js project and Google Tag Manager.
 
 2. GTM Consent State variable template: `Consent State`
 
-- Variables -> User-Defined Variables -> New -> Community Template Gallery -> GTM Consent State by Ayudante
+- First enable the GTM Consent State template from the Community Template Gallery: Variables -> User-Defined Variables -> New -> Community Template Gallery -> GTM Consent State by Ayudante
+- Then create a new variable named `Consent State` and select the GTM Consent State variable type from Custom Templates
 
 3. Custom JavaScript Variable: `cjs - consent - analytics`
 
