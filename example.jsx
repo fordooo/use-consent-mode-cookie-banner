@@ -1,18 +1,23 @@
 import React from "react";
 import * as CookieConsent from "vanilla-cookieconsent";
-import { useCookieBanner } from "./use-cookie-banner";
+import { CookieBanner } from "./cookie-banner";
+
+const LANGUAGE = "en";
 
 const Example = () => {
-  // call useCookieBanner hook in your app where it will show up on all desired pages
-  useCookieBanner({ lang: "en", privacyPolicyUrl: "/privacy-policy" });
+  // Add CookieBanner to your app where it will be included on all desired pages
 
   return (
-    <div>
-      <h1>Hello World</h1>
-      <button onClick={CookieConsent.showPreferences}>
-        Cookie Preferences
-      </button>
-    </div>
+    <>
+      <CookieBanner language={LANGUAGE} privacyPolicyUrl="/privacy-policy" />
+      <main>
+        <h1>Hello World</h1>
+        <p>Click the button below to open the cookie preferences modal</p>
+        <button onClick={CookieConsent.showPreferences}>
+          Cookie Preferences
+        </button>
+      </main>
+    </>
   );
 };
 

@@ -1,17 +1,17 @@
-# Consent Mode Cookie Banner
+# React Consent Mode Cookie Banner
 
-Steps to setup Google Consent Mode in a React.js project and Google Tag Manager.
+Set up Google Consent Mode in your React project with Cookie Consent and Google Tag Manager. No paid services, 100% free!
 
 ![cookie banner](./images/cookie-banner.png)
 
 ## Install and Setup Cookie Consent Banner
 
 - Install the [cookieconsent](https://github.com/osano/cookieconsent) library: `yarn add vanilla-cookieconsent`
-- Add `useCookieBanner` hook and customize text/options (reference [docs](https://cookieconsent.orestbida.com/reference/api-reference.html) for available options)
-- Add to any pages needing the banner: eg `useCookieBanner({ lang: 'en', privacyPolicyUrl: '/privacy-policy' })`
+- Copy the `CookieBanner` component to your project and customize text/options (reference [docs](https://cookieconsent.orestbida.com/reference/api-reference.html) for available options)
+- Add to any pages needing the banner: eg `<CookieBanner language="en" privacyPolicyUrl="/privacy-policy" />`
 - Preferences modal can be reopened by calling `CookieConsent.showPreferences()`, eg from a "Cookie Preferences" button in the footer
-- The `useCookieBanner` hook takes a config with two options:
-  - `lang` sets the default language of the banner
+- The `CookieBanner` component takes two props:
+  - `language` sets the language of the banner
   - `privacyPolicyUrl` sets the URL of the privacy policy page link
 
 ## Setup Google Tag Manager to Handle Consent Selection

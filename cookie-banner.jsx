@@ -19,7 +19,7 @@ const initializeConsent = () => {
   }, 500);
 };
 
-const getConfig = ({ lang, privacyPolicyUrl }) => {
+const getConfig = ({ language, privacyPolicyUrl }) => {
   const config = {
     onFirstConsent: initializeConsent,
     onChange: updateConsent,
@@ -46,7 +46,7 @@ const getConfig = ({ lang, privacyPolicyUrl }) => {
       marketing: {},
     },
     language: {
-      default: lang,
+      default: language,
       // autoDetect: 'browser',
       translations: {
         en: {
@@ -154,17 +154,17 @@ const getConfig = ({ lang, privacyPolicyUrl }) => {
   return config;
 };
 
-export const useCookieBanner = ({
-  lang = "en",
+export const CookieBanner = ({
+  language = "en",
   privacyPolicyUrl = "/privacy-policy",
 }) => {
   useEffect(() => {
     // Uncomment the following line to reset the consent cookie:
     // CookieConsent.reset(true)
 
-    CookieConsent.setLanguage(lang);
-    CookieConsent.run(getConfig({ lang, privacyPolicyUrl }));
-  }, [lang, privacyPolicyUrl]);
+    CookieConsent.setLanguage(language);
+    CookieConsent.run(getConfig({ language, privacyPolicyUrl }));
+  }, [language, privacyPolicyUrl]);
 
   return null;
 };
